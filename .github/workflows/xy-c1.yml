@@ -1,5 +1,5 @@
 #修改TNAME: K2P 中的K2P为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: Build-Padavan-xy-c1
+name: Build-Padavan-xy-c1-32-512-usb
 
 on: 
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
       env:
         KERNEL: 3.4
       run: |
-        git clone --depth=1 https://github.com/keben12345/Padavan-KVR.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/fightroad/Padavan-KVR.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
@@ -105,4 +105,3 @@ jobs:
       with:
         name: Padavan-packages
         path: /opt/images
-      
