@@ -99,7 +99,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA=y" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=y" >> .config
-        
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD/d' .config
+        echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
