@@ -1,5 +1,5 @@
 #修改TNAME: K2P-5.0 中的K2P-5.0为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: H.PSG1218TESTa
+name: XY-C1
 
 on:
   workflow_dispatch:
@@ -38,7 +38,7 @@ jobs:
           sudo apt install libtool-bin gperf python3-docutils autopoint gettext ccache
       - name: Clone source code
         run: |
-          git clone -b custom --depth=1 https://github.com/yh793/rt-n56u.git /opt/rt-n56u
+          git clone -b  --depth=1 https://github.com/keben12345/padavan-kvr.git /opt/rt-n56u
           cd /opt/rt-n56u/toolchain-mipsel
           sh dl_toolchain.sh
           mkdir -p /opt/images/
@@ -75,4 +75,5 @@ jobs:
         with:
           name: Padavan-packages
           path: /opt/images
+
 
